@@ -1,12 +1,20 @@
 .button-component {
   background-color: black;
-  width: 90vw;
+
+  padding: 5px;
+  font-size: 3.5em;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 10px solid gray;
 }
 
 .button-small {
+  width: 90vw;
   height: 20vh;
 }
 
 .button-big {
+  width: 90vw;
   height: 30vh;
 }
