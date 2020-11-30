@@ -8,8 +8,6 @@ import Home from './views/home';
 import FoodMenu from './views/foodMenu';
 import BodyMenu from './views/bodyMenu';
 
-
-
 function App() {
   return (
     <Router>
