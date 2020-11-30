@@ -1,10 +1,13 @@
 import React from 'react';
 import "./styles.css";
+import {
+ Link
+} from "react-router-dom";
 
 const Button = ({ title, linkTo, size }) => (
- <a href={linkTo} className={`button-component button-${size}`}>
+ <Link to={linkTo} className={`button-component button-${size}`}>
   {title}
- </a>
+ </Link>
 );
 
 export default Button;
