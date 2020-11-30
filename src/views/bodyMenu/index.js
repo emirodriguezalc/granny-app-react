@@ -7,7 +7,7 @@ const BodyMenu = () => {
       <Header title="Body Menu" backTo="/home" />
       <Button linkTo="/foodMenu" title="Food Intake Tracker" size="big" />
       <Button linkTo="/waterMenu" title="Water Intake Tracker" size="big" />
-      <Button linkTo="/medicinemenu" title="Medicine Tracker" size="big" />
+      <Button linkTo="/seeMedicines" title="Medicine Tracker" size="big" />
     </>
   );
 };

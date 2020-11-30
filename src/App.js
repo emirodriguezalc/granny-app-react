@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './views/home';
 import Tracker from './views/tracker';
 import BodyMenu from './views/bodyMenu';
+import { food, water, medicines } from './config/tracker';
 
 function App() {
   return (
@@ -12,42 +13,13 @@ function App() {
           <Home />
         </Route>
         <Route path="/foodMenu">
-          <Tracker
-            view={{
-              title: 'Food tracker',
-              viewName: 'food-menu',
-              list: [
-                { name: 'breakfast', text: 'I had breakfast' },
-                { name: 'lunch', text: 'I had lunch' },
-              ],
-            }}
-          />
+          <Tracker view={food} />
         </Route>
         <Route path="/waterMenu">
-          <Tracker
-            view={{
-              title: 'Water tracker',
-
-              viewName: 'water-menu',
-              list: [
-                { name: 'morning', text: 'Morning' },
-                { name: 'midday', text: 'Midday' },
-              ],
-            }}
-          />
+          <Tracker view={water} />
         </Route>
-        <Route path="/medicineMenu">
-          <Tracker
-            view={{
-              title: 'Medicine tracker',
-
-              viewName: 'medicine-menu',
-              list: [
-                { name: 'ibux', text: 'ibux' },
-                { name: 'profen', text: 'profen' },
-              ],
-            }}
-          />
+        <Route path="/seeMedicines">
+          <Tracker view={medicines} />
         </Route>
         <Route path="/bodyMenu">
           <BodyMenu />
