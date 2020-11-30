@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Options from './components/options';
 import FoodMenu from './views/foodMenu';
-import { home, bodyMenu, mindMenu, mindTrainer, medicineMenu, haveFunMenu, photosHome } from "./config";
+import { home, bodyMenu, mindMenu, mindTrainer, medicineMenu, haveFunMenu, photosHome } from "./config/options";
 
 function App() {
   return (
