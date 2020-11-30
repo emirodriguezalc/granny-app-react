@@ -1,0 +1,12 @@
+.button-component {
+  background-color: black;
+  width: 90vw;
+}
+
+.button-small {
+  height: 20vh;
+}
+
+.button-big {
+  height: 30vh;
+}
