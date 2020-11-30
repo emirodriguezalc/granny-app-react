@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../../components/button';
-import Header from '../../components/header';
+import Button from '../button';
+import Header from '../header';
 import './styles.css';
 import './toggle.css';
 

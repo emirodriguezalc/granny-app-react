@@ -1,16 +1,24 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './views/home';
-import Tracker from './views/tracker';
-import BodyMenu from './views/bodyMenu';
+import Options from './components/options';
+import Tracker from './components/tracker';
 import { food, water, medicines } from './config/tracker';
+import {
+  home,
+  bodyMenu,
+  mindMenu,
+  mindTrainer,
+  medicineMenu,
+  haveFunMenu,
+  photosHome,
+} from './config/options';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Options data={home} />
         </Route>
         <Route path="/foodMenu">
           <Tracker view={food} />
@@ -22,7 +30,22 @@ function App() {
           <Tracker view={medicines} />
         </Route>
         <Route path="/bodyMenu">
-          <BodyMenu />
+          <Options data={bodyMenu} />
+        </Route>
+        <Route path="/medicineMenu">
+          <Options data={medicineMenu} />
+        </Route>
+        <Route path="/mindMenu">
+          <Options data={mindMenu} />
+        </Route>
+        <Route path="/mindTrainer">
+          <Options data={mindTrainer} />
+        </Route>
+        <Route path="/haveFunMenu">
+          <Options data={haveFunMenu} />
+        </Route>
+        <Route path="/photosHome">
+          <Options data={photosHome} />
         </Route>
         {/*         <Route>
           <NotFound />
