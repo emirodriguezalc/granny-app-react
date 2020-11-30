@@ -1,13 +1,35 @@
 import './App.css';
-import Button from './components/input'
-import Header from './components/header'
-import Input from './components/input'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Home from './views/home';
+import FoodMenu from './views/foodMenu';
+import BodyMenu from './views/bodyMenu';
+
+
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/foodMenu">
+          <FoodMenu />
+        </Route>
+        <Route path="/bodyMenu">
+          <BodyMenu />
+        </Route>
+        {/*         <Route>
+          <NotFound />
+        </Route> */}
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
+
