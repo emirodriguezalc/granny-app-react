@@ -1,12 +1,17 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Options from './components/options';
-import FoodMenu from './views/foodMenu';
-import { home, bodyMenu, mindMenu, mindTrainer, medicineMenu, haveFunMenu, photosHome } from "./config/options";
+import Tracker from './components/tracker';
+import { food, water, medicines } from './config/tracker';
+import {
+  home,
+  bodyMenu,
+  mindMenu,
+  mindTrainer,
+  medicineMenu,
+  haveFunMenu,
+  photosHome,
+} from './config/options';
 
 function App() {
   return (
@@ -16,7 +21,13 @@ function App() {
           <Options data={home} />
         </Route>
         <Route path="/foodMenu">
-          <FoodMenu />
+          <Tracker view={food} />
+        </Route>
+        <Route path="/waterMenu">
+          <Tracker view={water} />
+        </Route>
+        <Route path="/seeMedicines">
+          <Tracker view={medicines} />
         </Route>
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
@@ -45,4 +56,3 @@ function App() {
 }
 
 export default App;
-
