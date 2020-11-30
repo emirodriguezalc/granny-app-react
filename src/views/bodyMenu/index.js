@@ -1,13 +1,13 @@
-import React from "react";
-import Header from "../../components/header";
-import Button from "../../components/button";
+import React from 'react';
+import Header from '../../components/header';
+import Button from '../../components/button';
 const BodyMenu = () => {
   return (
     <>
       <Header title="Body Menu" backTo="/home" />
       <Button linkTo="/foodMenu" title="Food Intake Tracker" size="big" />
       <Button linkTo="/waterMenu" title="Water Intake Tracker" size="big" />
-      <Button linkTo="/foodMenu" title="Medicine Tracker" size="big" />
+      <Button linkTo="/medicinemenu" title="Medicine Tracker" size="big" />
     </>
   );
 };
