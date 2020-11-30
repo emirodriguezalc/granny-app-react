@@ -1,6 +1,7 @@
 import './App.css';
-import Button from './components/button'
+import Button from './components/input'
 import Header from './components/header'
+import Input from './components/input'
 
 function App() {
   return (
