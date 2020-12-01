@@ -1,6 +1,7 @@
 .friend-box-section {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .friend-box-section:nth-child(odd) {
@@ -32,4 +33,14 @@
   flex-direction: column;
   text-align: left;
   padding: 5px 0 5px 5px;
+}
+
+.friend-box-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-box-section > .button-component {
+  width: 80vw;
 }
