@@ -20,7 +20,7 @@ const Tracker = ({ view }) => (
         );
       })}
     </div>
-    <Button title="Submit and go back" />
+    <Button title="Submit and go back" linkTo="/bodyMenu" size="big" />
   </div>
 );
 

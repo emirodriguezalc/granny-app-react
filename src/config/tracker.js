@@ -11,7 +11,6 @@ const food = {
 
 const water = {
   title: 'Water tracker',
-
   viewName: 'water-menu',
   list: [
     { name: 'morning', text: 'Morning' },
@@ -23,7 +22,6 @@ const water = {
 // mock
 const medicines = {
   title: 'Medicine tracker',
-
   viewName: 'see-medicines',
   list: [
     { name: 'ibux', text: 'ibux' },
