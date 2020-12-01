@@ -12,7 +12,11 @@ import {
 import AddMedicine from './components/addMedicine';
 import Meditation from './views/meditation';
 import MyScore from './views/myScore';
+
+import WeeklyBoard from './views/weeklyBoard';
+
 import ListPage from "./components/listPage";
+
 
 import {
   home,
@@ -30,6 +34,7 @@ import weeklyBoardMock from './mocks/weeklyBoardMock';
 import gameInvitesMock from './mocks/gameInvitesMock';
 import PlayMenu from './views/playMenu/PlayMenu';
 import Game from './views/tictactoe/Tictactoe';
+import PhotosFeed from './views/photosFeed/PhotosFeed';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -117,7 +122,6 @@ function App() {
         <Route path="/tictactoe">
           <Game />
         </Route>
-
         <Route path="/weeklyBoard">
           <ListPage
             list={weeklyBoardMock.list}
@@ -128,6 +132,10 @@ function App() {
 
         <Route path="/photosHome">
           <Options data={photosHome} />
+        </Route>
+
+        <Route path="/photosFeed">
+          <PhotosFeed />
         </Route>
 
         <Route path="/myScore">
