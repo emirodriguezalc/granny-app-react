@@ -12,6 +12,7 @@ import {
 import AddMedicine from './components/addMedicine';
 import Meditation from './views/meditation';
 import MyScore from './views/myScore';
+import WeeklyBoard from "./views/weeklyBoard";
 
 import {
   home,
@@ -25,6 +26,7 @@ import {
 
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
+import weeklyBoardMock from './mocks/weeklyBoardMock';
 import PlayMenu from './views/playMenu/PlayMenu';
 import Game from './views/tictactoe/Tictactoe';
 
@@ -94,6 +96,8 @@ function App() {
         </Route>
         <Route path="/tictactoe">
           <Game />
+        <Route path="/weeklyBoard">
+          <WeeklyBoard list={weeklyBoardMock} />
         </Route>
         <Route path="/photosHome">
           <Options data={photosHome} />
