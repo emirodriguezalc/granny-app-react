@@ -2,7 +2,10 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Options from './components/options';
 import Tracker from './components/tracker';
+
 import Meditation from './views/meditation';
+
+import MyScore from './views/myScore';
 import { food, water, medicines } from './config/tracker';
 import {
   home,
@@ -14,6 +17,7 @@ import {
   photosHome,
 } from './config/options';
 import { guides } from './config/meditation';
+import scoreMock from './mocks/myscore';
 
 function App() {
   return (
@@ -51,6 +55,9 @@ function App() {
         </Route>
         <Route path="/photosHome">
           <Options data={photosHome} />
+        </Route>
+        <Route path="/myScore">
+          <MyScore data={scoreMock} />
         </Route>
         {/*         <Route>
           <NotFound />
