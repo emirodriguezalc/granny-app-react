@@ -47,8 +47,6 @@ class Board extends React.Component {
       squaresHistory: squaresHistory,
       xIsNext: !this.state.xIsNext,
     });
-
-    this.props.onToggleX(this.state.xIsNext);
   }
 
   handleUndo() {
@@ -64,8 +62,6 @@ class Board extends React.Component {
       squaresHistory: squaresHistory,
       xIsNext: !this.state.xIsNext,
     });
-
-    this.props.onToggleX(this.state.xIsNext);
   }
 
   handleRedo() {
@@ -76,8 +72,6 @@ class Board extends React.Component {
       squares: this.state.squaresHistory[move],
       xIsNext: !this.state.xIsNext,
     });
-
-    this.props.onToggleX(this.state.xIsNext);
   }
 
   handleNewGame() {
@@ -87,8 +81,6 @@ class Board extends React.Component {
       squaresHistory: Array(9).fill(null),
       xIsNext: true,
     });
-
-    this.props.onToggleX(this.state.xIsNext);
   }
 
   renderSquare(i) {
@@ -161,23 +153,11 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      classes: 'game',
-    };
-  }
-
-  onToggleX = x => {
-    this.setState({
-      classes: x ? 'revert game' : 'game',
-    });
-  };
   render() {
     return (
-      <div className={this.state.classes}>
+      <div className="game">
         <div className="game-board">
-          <Board onToggleX={this.onToggleX} />
+          <Board />
         </div>
       </div>
     );
@@ -210,4 +190,3 @@ const Tictactoe = () => (
   </div>
 );
 export default Tictactoe;
-// ReactDOM.render(<Game />, document.getElementById('root'));

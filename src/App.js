@@ -38,7 +38,6 @@ function App() {
           <Options data={home} />
         </Route>
         <Route path="/foodMenu">
-          {' '}
           <Tracker
             list={foodData.list}
             viewName={foodData.viewName}
@@ -47,7 +46,6 @@ function App() {
           />
         </Route>
         <Route path="/waterMenu">
-          {' '}
           <Tracker
             list={waterData.list}
             viewName={waterData.viewName}
