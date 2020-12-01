@@ -24,9 +24,7 @@ import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
 
 function App() {
-  const [medicines, setMedicines] = useState({
-    list: [],
-  });
+  const [medicines, setMedicines] = useState([]);
 
   return (
     <Router>
@@ -38,7 +36,7 @@ function App() {
         <Route path="/waterMenu"> <Tracker list={waterData.list} viewName={waterData.viewName} viewTitle={waterData.title} backTo={waterData.backTo} /></Route>
         <Route path="/addMedicine">
           <AddMedicine
-            data={medicines}
+            medicines={medicines}
             setMedicines={setMedicines}
             viewName={addMedicine.viewName}
             viewTitle={addMedicine.title}

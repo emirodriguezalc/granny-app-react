@@ -3,7 +3,7 @@ import Button from '../button';
 import Header from '../header';
 
 const AddMedicine = ({
-  data,
+  medicines,
   setMedicines,
   viewName,
   viewTitle,
@@ -12,17 +12,14 @@ const AddMedicine = ({
   const [text, setText] = useState("");
   const handleMedicines = (e) => {
     e.preventDefault()
-    const updatedList = [
-      ...data.list,
+    const updatedMedicines = [
+      ...medicines,
       {
         text: text,
         taken: false
       }
     ]
-    const updatedData = {
-      list: updatedList,
-    }
-    setMedicines(updatedData);
+    setMedicines(updatedMedicines);
     setText("");
   }
 

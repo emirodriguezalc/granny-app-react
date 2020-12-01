@@ -9,7 +9,7 @@ const Tracker = ({ list, viewTitle, viewName, backTo }) => (
     <Header title={viewName} backTo={backTo} />
     <div className="content-wrapper">
       <h2>{viewTitle}</h2>
-      {list.list.map(l => (
+      {list.map(l => (
         <section className="section--text">
           {l.text}
           <div className="toggle-wrapper">
