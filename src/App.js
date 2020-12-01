@@ -1,13 +1,13 @@
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { React, useState } from 'react';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { React, useState } from "react";
 import {
   medicineData,
   foodData,
   waterData,
   addMedicine,
-} from './config/tracker';
-import MyScore from './views/myScore';
+} from "./config/tracker";
+import MyScore from "./views/myScore";
 import {
   home,
   bodyMenu,
@@ -60,7 +60,6 @@ function App() {
             backTo={waterData.backTo}
           />
         </Route>
-
         <Route path="/addMedicine">
           <AddMedicine
             medicines={medicines}
