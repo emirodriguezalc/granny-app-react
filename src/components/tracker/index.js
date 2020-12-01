@@ -4,21 +4,20 @@ import Header from '../header';
 import './styles.css';
 import './toggle.css';
 
-const Tracker = ({ view }) => (
-  <div className={view.viewName}>
-    <Header title={view.title} backTo="/bodymenu" />
+const Tracker = ({ list, viewTitle, viewName, backTo }) => (
+  <div className={viewName}>
+    <Header title={viewName} backTo={backTo} />
     <div className="content-wrapper">
-      {view.list.map(l => {
-        return (
-          <section className="section--text">
-            {l.text}
-            <div className="toggle-wrapper">
-              <input name={l.name} id={l.name} type="checkbox" />
-              <label for={l.name}></label>
-            </div>
-          </section>
-        );
-      })}
+      <h2>{viewTitle}</h2>
+      {list.list.map(l => (
+        <section className="section--text">
+          {l.text}
+          <div className="toggle-wrapper">
+            <input name={l.text} id={l.text} type="checkbox" />
+            <label for={l.text}></label>
+          </div>
+        </section>
+      ))}
     </div>
     <Button title="Submit and go back" />
   </div>
