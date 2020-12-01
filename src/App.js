@@ -1,13 +1,13 @@
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { React, useState } from 'react';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { React, useState } from "react";
 import {
   medicineData,
   foodData,
   waterData,
   addMedicine,
-} from './config/tracker';
-import MyScore from './views/myScore';
+} from "./config/tracker";
+import MyScore from "./views/myScore";
 import {
   home,
   bodyMenu,
@@ -16,19 +16,19 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
-} from './config/options';
-import { guides } from './config/meditation';
-import Options from './components/options';
-import Tracker from './components/tracker';
-import AddMedicine from './components/addMedicine';
+} from "./config/options";
+import { guides } from "./config/meditation";
+import Options from "./components/options";
+import Tracker from "./components/tracker";
+import AddMedicine from "./components/addMedicine";
 import ListPage from "./components/listPage";
-import scoreMock from './mocks/myscore';
-import weeklyBoardMock from './mocks/weeklyBoardMock';
-import gameInvitesMock from './mocks/gameInvitesMock';
-import PlayMenu from './views/playMenu/PlayMenu';
-import Game from './views/tictactoe/Tictactoe';
-import PhotosFeed from './views/photosFeed/PhotosFeed';
-import Meditation from './views/meditation';
+import scoreMock from "./mocks/myscore";
+import weeklyBoardMock from "./mocks/weeklyBoardMock";
+import gameInvitesMock from "./mocks/gameInvitesMock";
+import PlayMenu from "./views/playMenu/PlayMenu";
+import Game from "./views/tictactoe/Tictactoe";
+import PhotosFeed from "./views/photosFeed/PhotosFeed";
+import Meditation from "./views/meditation";
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -56,7 +56,6 @@ function App() {
             backTo={waterData.backTo}
           />
         </Route>
-
         <Route path="/addMedicine">
           <AddMedicine
             medicines={medicines}
@@ -115,6 +114,7 @@ function App() {
         <Route path="/tictactoe">
           <Game />
         </Route>
+
         <Route path="/weeklyBoard">
           <ListPage
             list={weeklyBoardMock.list}
