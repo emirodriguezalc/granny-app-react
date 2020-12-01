@@ -1,13 +1,17 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { React, useState } from "react";
-import Options from "./components/options";
-import Tracker from "./components/tracker";
-import { medicineData, foodData, waterData, addMedicine } from "./config/tracker";
-import AddMedicine from "./components/addMedicine";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { React, useState } from 'react';
+import Options from './components/options';
+import Tracker from './components/tracker';
+import {
+  medicineData,
+  foodData,
+  waterData,
+  addMedicine,
+} from './config/tracker';
+import AddMedicine from './components/addMedicine';
 import Meditation from './views/meditation';
 import MyScore from './views/myScore';
-import { food, water, medicines } from './config/tracker';
 
 import {
   home,
@@ -17,8 +21,7 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
-
-} from "./config/options";
+} from './config/options';
 
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
@@ -32,8 +35,24 @@ function App() {
         <Route exact path="/">
           <Options data={home} />
         </Route>
-        <Route path="/foodMenu"> <Tracker list={foodData.list} viewName={foodData.viewName} viewTitle={foodData.title} backTo={foodData.backTo} /></Route>
-        <Route path="/waterMenu"> <Tracker list={waterData.list} viewName={waterData.viewName} viewTitle={waterData.title} backTo={waterData.backTo} /></Route>
+        <Route path="/foodMenu">
+          {' '}
+          <Tracker
+            list={foodData.list}
+            viewName={foodData.viewName}
+            viewTitle={foodData.title}
+            backTo={foodData.backTo}
+          />
+        </Route>
+        <Route path="/waterMenu">
+          {' '}
+          <Tracker
+            list={waterData.list}
+            viewName={waterData.viewName}
+            viewTitle={waterData.title}
+            backTo={waterData.backTo}
+          />
+        </Route>
         <Route path="/addMedicine">
           <AddMedicine
             medicines={medicines}
@@ -45,7 +64,12 @@ function App() {
         </Route>
 
         <Route path="/seeMedicines">
-          <Tracker list={medicines} viewName={medicineData.viewName} viewTitle={medicineData.title} backTo={medicineData.backTo} />
+          <Tracker
+            list={medicines}
+            viewName={medicineData.viewName}
+            viewTitle={medicineData.title}
+            backTo={medicineData.backTo}
+          />
         </Route>
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
