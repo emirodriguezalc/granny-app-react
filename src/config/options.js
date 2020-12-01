@@ -114,11 +114,28 @@ const haveFunMenu = {
     },
     {
       title: 'Show play section',
-      linkTo: '/gameInvites',
+      linkTo: '/gameHome',
       size: 'big',
     },
   ],
 };
+
+const gameHome = {
+  title: 'Games home',
+  backTo: '/',
+  buttons: [
+    {
+      title: 'Add a friend',
+      linkTo: '/playFollow',
+      size: 'big',
+    },
+    {
+      title: 'Go to my friends list',
+      linkTo: '/gameInvites',
+      size: 'big',
+    },
+  ],
+}
 
 const photosHome = {
   title: 'Photos home',
@@ -145,4 +162,5 @@ export {
   medicineMenu,
   haveFunMenu,
   photosHome,
+  gameHome,
 };
