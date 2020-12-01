@@ -1,19 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { React, useState } from "react";
-import Options from "./components/options";
-import Tracker from "./components/tracker";
 import {
   medicineData,
   foodData,
   waterData,
   addMedicine,
 } from "./config/tracker";
-import AddMedicine from "./components/addMedicine";
-import Meditation from "./views/meditation";
 import MyScore from "./views/myScore";
-import { food, water, medicines } from "./config/tracker";
-
 import {
   home,
   bodyMenu,
@@ -23,9 +17,18 @@ import {
   haveFunMenu,
   photosHome,
 } from "./config/options";
-
 import { guides } from "./config/meditation";
+import Options from "./components/options";
+import Tracker from "./components/tracker";
+import AddMedicine from "./components/addMedicine";
+import ListPage from "./components/listPage";
 import scoreMock from "./mocks/myscore";
+import weeklyBoardMock from "./mocks/weeklyBoardMock";
+import gameInvitesMock from "./mocks/gameInvitesMock";
+import PlayMenu from "./views/playMenu/PlayMenu";
+import Game from "./views/tictactoe/Tictactoe";
+import PhotosFeed from "./views/photosFeed/PhotosFeed";
+import Meditation from "./views/meditation";
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -35,8 +38,8 @@ function App() {
         <Route exact path="/">
           <Options data={home} />
         </Route>
+
         <Route path="/foodMenu">
-          {" "}
           <Tracker
             list={foodData.list}
             viewName={foodData.viewName}
@@ -44,8 +47,8 @@ function App() {
             backTo={foodData.backTo}
           />
         </Route>
+
         <Route path="/waterMenu">
-          {" "}
           <Tracker
             list={waterData.list}
             viewName={waterData.viewName}
@@ -71,27 +74,63 @@ function App() {
             backTo={medicineData.backTo}
           />
         </Route>
+
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
         </Route>
+
         <Route path="/medicineMenu">
           <Options data={medicineMenu} />
         </Route>
+
         <Route path="/mindMenu">
           <Options data={mindMenu} />
         </Route>
+
         <Route path="/meditationMenu">
           <Meditation view={guides} />
         </Route>
+
         <Route path="/mindTrainer">
           <Options data={mindTrainer} />
         </Route>
+
         <Route path="/haveFunMenu">
           <Options data={haveFunMenu} />
         </Route>
+
+        <Route path="/gameInvites">
+          <ListPage
+            list={gameInvitesMock.list}
+            backTo={gameInvitesMock.backTo}
+            title={gameInvitesMock.title}
+          />
+        </Route>
+
+        <Route path="/playMenu">
+          <PlayMenu />
+        </Route>
+
+        <Route path="/tictactoe">
+          <Game />
+        </Route>
+
+        <Route path="/weeklyBoard">
+          <ListPage
+            list={weeklyBoardMock.list}
+            backTo={weeklyBoardMock.backTo}
+            title={weeklyBoardMock.title}
+          />
+        </Route>
+
         <Route path="/photosHome">
           <Options data={photosHome} />
         </Route>
+
+        <Route path="/photosFeed">
+          <PhotosFeed />
+        </Route>
+
         <Route path="/myScore">
           <MyScore data={scoreMock} />
         </Route>
