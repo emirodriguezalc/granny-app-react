@@ -25,6 +25,8 @@ import {
 
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
+import PlayMenu from './views/playMenu/PlayMenu';
+import Game from './views/tictactoe/Tictactoe';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -88,6 +90,12 @@ function App() {
         </Route>
         <Route path="/haveFunMenu">
           <Options data={haveFunMenu} />
+        </Route>
+        <Route path="/playMenu">
+          <PlayMenu />
+        </Route>
+        <Route path="/tictactoe">
+          <Game />
         </Route>
         <Route path="/photosHome">
           <Options data={photosHome} />

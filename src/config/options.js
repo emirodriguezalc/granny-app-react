@@ -99,7 +99,7 @@ const medicineMenu = {
 };
 
 const haveFunMenu = {
-  title: 'Medicine Menu',
+  title: 'Have fun',
   backTo: '/',
   buttons: [
     {
@@ -121,7 +121,7 @@ const haveFunMenu = {
 };
 
 const photosHome = {
-  title: 'Mind Menu',
+  title: 'Photos home',
   backTo: '/',
   buttons: [
     {
