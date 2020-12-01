@@ -62,11 +62,11 @@ const waterData = {
     taken: false
   },
   {
-    text: "Morning",
+    text: "Afternoon",
     taken: false
   },
   {
-    text: "Morning",
+    text: "Night",
     taken: false
   }
   ]
@@ -102,4 +102,4 @@ const medicines = {
     { name: 'profen', text: 'profen' },
   ],
 };
-export { food, water, medicines, medicineData, foodData, waterData, addMedicine  };
+export { food, water, medicines, medicineData, foodData, waterData, addMedicine };
