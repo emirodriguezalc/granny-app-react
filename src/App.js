@@ -1,23 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { React, useState } from 'react';
-import Options from './components/options';
-import Tracker from './components/tracker';
 import {
   medicineData,
   foodData,
   waterData,
   addMedicine,
 } from './config/tracker';
-import AddMedicine from './components/addMedicine';
-import Meditation from './views/meditation';
 import MyScore from './views/myScore';
-
-import WeeklyBoard from './views/weeklyBoard';
-
-import ListPage from "./components/listPage";
-
-
 import {
   home,
   bodyMenu,
@@ -27,18 +17,21 @@ import {
   haveFunMenu,
   photosHome,
 } from './config/options';
-
 import { guides } from './config/meditation';
+import Options from './components/options';
+import Tracker from './components/tracker';
+import AddMedicine from './components/addMedicine';
+import ListPage from "./components/listPage";
 import scoreMock from './mocks/myscore';
 import weeklyBoardMock from './mocks/weeklyBoardMock';
 import gameInvitesMock from './mocks/gameInvitesMock';
 import PlayMenu from './views/playMenu/PlayMenu';
 import Game from './views/tictactoe/Tictactoe';
 import PhotosFeed from './views/photosFeed/PhotosFeed';
+import Meditation from './views/meditation';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
-
   return (
     <Router>
       <Switch>
