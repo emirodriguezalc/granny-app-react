@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Options from './components/options';
 import Tracker from './components/tracker';
+import Meditation from './views/meditation';
 import { food, water, medicines } from './config/tracker';
 import {
   home,
@@ -12,6 +13,7 @@ import {
   haveFunMenu,
   photosHome,
 } from './config/options';
+import { guides } from './config/meditation';
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
         </Route>
         <Route path="/mindMenu">
           <Options data={mindMenu} />
+        </Route>
+        <Route path="/meditationMenu">
+          <Meditation view={guides} />
         </Route>
         <Route path="/mindTrainer">
           <Options data={mindTrainer} />
