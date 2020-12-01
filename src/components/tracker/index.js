@@ -1,23 +1,23 @@
-import React from "react";
-import Button from "../button";
-import Header from "../header";
-import "./styles.css";
-import "./toggle.css";
+import React from 'react';
+import Button from '../button';
+import Header from '../header';
+import './styles.css';
+import './toggle.css';
 
 let timeOfDay;
 const hour = new Date().getHours();
 
 if (hour < 12) {
-  timeOfDay = "morning";
+  timeOfDay = 'morning';
 }
 if (12 <= hour && hour < 14) {
-  timeOfDay = "midday";
+  timeOfDay = 'midday';
 }
 if (14 <= hour && hour < 18) {
-  timeOfDay = "afternoon";
+  timeOfDay = 'afternoon';
 }
 if (18 <= hour && hour < 24) {
-  timeOfDay = "evening";
+  timeOfDay = 'evening';
 }
 
 const Tracker = ({ list, viewTitle, viewName, backTo }) => {
@@ -25,8 +25,8 @@ const Tracker = ({ list, viewTitle, viewName, backTo }) => {
 
   let medicineWithCorrectTime = [];
   if (list.length > 0) {
-    if (Object.keys(list[0]).some((key) => key === "time")) {
-      medicineWithCorrectTime = list.filter((medicine) => {
+    if (Object.keys(list[0]).some(key => key === 'time')) {
+      medicineWithCorrectTime = list.filter(medicine => {
         return medicine.time === timeOfDay;
       });
     }
@@ -39,9 +39,9 @@ const Tracker = ({ list, viewTitle, viewName, backTo }) => {
   return (
     <div className={viewName}>
       <Header title={viewName} backTo={backTo} />
-      <div className="content-wrapper">
+      <div className="tracker-wrapper">
         <h2>{viewTitle}</h2>
-        {newList.map((l) => (
+        {newList.map(l => (
           <section className="section--text">
             {l.text}
             <div className="toggle-wrapper">
