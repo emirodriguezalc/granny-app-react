@@ -114,7 +114,7 @@ const haveFunMenu = {
   },
   {
    title: "Show play section",
-   linkTo: "/playMennu",
+   linkTo: "/playMenu",
    size: "big"
   },
  ]

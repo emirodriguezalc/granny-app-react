@@ -7,7 +7,7 @@ import { medicineData, foodData, waterData, addMedicine } from "./config/tracker
 import AddMedicine from "./components/addMedicine";
 import Meditation from './views/meditation';
 import MyScore from './views/myScore';
-import { food, water, medicines } from './config/tracker';
+import WeeklyBoard from "./views/weeklyBoard";
 
 import {
   home,
@@ -17,11 +17,12 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
-
 } from "./config/options";
 
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
+import weeklyBoardMock from './mocks/weeklyBoardMock';
+
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -64,6 +65,9 @@ function App() {
         </Route>
         <Route path="/haveFunMenu">
           <Options data={haveFunMenu} />
+        </Route>
+        <Route path="/weeklyBoard">
+          <WeeklyBoard list={weeklyBoardMock} />
         </Route>
         <Route path="/photosHome">
           <Options data={photosHome} />
