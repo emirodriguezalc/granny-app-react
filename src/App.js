@@ -1,8 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { React, useState } from "react";
 import Options from "./components/options";
 import Tracker from "./components/tracker";
-import { medicineData } from "./config/tracker";
+import { medicineData, foodData, waterData, addMedicine } from "./config/tracker";
 import AddMedicine from "./components/addMedicine";
 import {
   home,
@@ -13,52 +14,32 @@ import {
   haveFunMenu,
   photosHome,
 } from "./config/options";
-import { React, useState, useContext } from "react";
+
 function App() {
-  const [text, setText] = useState("");
-  const [name, setName] = useState("");
   const [medicines, setMedicines] = useState({
-    viewName: "see-medcines",
-    title: "test-medicine-state",
-    list: [{}],
+    list: [],
   });
 
-  const handleMedicines = (e) => {
-    e.preventDefault();
-    console.log("kommer");
-    console.log(e.target);
-    console.log(name, "name");
-    console.log(medicines, "medicines fra state");
-    const newName = { name };
-    const copiedMedicines = { ...medicines };
-    copiedMedicines.list = [...copiedMedicines.list, newName];
-    setMedicines(copiedMedicines);
-    setName("");
-  };
-
-  console.log(medicines, "lala");
   return (
     <Router>
       <Switch>
         <Route exact path="/">
           <Options data={home} />
         </Route>
-        <Route path="/foodMenu">{/* <Tracker view={food} /> */}</Route>
-        <Route path="/waterMenu">{/* <Tracker view={water} /> */}</Route>
+        <Route path="/foodMenu"> <Tracker list={foodData.list} viewName={foodData.viewName} viewTitle={foodData.title} backTo={foodData.backTo} /></Route>
+        <Route path="/waterMenu"> <Tracker list={waterData.list} viewName={waterData.viewName} viewTitle={waterData.title} backTo={waterData.backTo} /></Route>
         <Route path="/addMedicine">
           <AddMedicine
-            setName={setName}
-            setText={setText}
-            text={text}
-            name={name}
-            handleMedicines={handleMedicines}
             data={medicines}
             setMedicines={setMedicines}
+            viewName={addMedicine.viewName}
+            viewTitle={addMedicine.title}
+            backTo={addMedicine.backTo}
           />
         </Route>
 
         <Route path="/seeMedicines">
-          <Tracker view={medicines} />
+          <Tracker list={medicines} viewName={medicineData.viewName} viewTitle={medicineData.title} backTo={medicineData.backTo} />
         </Route>
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
