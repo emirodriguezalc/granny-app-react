@@ -14,8 +14,6 @@ const AddMedicine = ({
   const [time, setTime] = useState("");
   const [days, setDays] = useState("");
 
-  console.log(medicines, "medisiner");
-  console.log(time, "time etter trykk");
   const handleMedicines = (e) => {
     e.preventDefault();
     const updatedMedicines = [
@@ -64,6 +62,7 @@ const AddMedicine = ({
             onChange={(e) => setText(e.target.value)}
           />
         </div>
+        <input type="submit" className="btn" value="Submit" />
       </form>
       <Button title="See my medicines" linkTo="/seeMedicines" size="big" />
     </div>

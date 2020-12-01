@@ -23,20 +23,20 @@ if (18 <= hour && hour < 24) {
 const Tracker = ({ list, viewTitle, viewName, backTo }) => {
   let newList = [...list];
   let medicineWithCorrectTime = [];
-  console.log(list, "list in tracker");
   if (list.length > 0) {
     if (Object.keys(list[0]).some((key) => key === "time")) {
-      console.log("has a key of time");
-      medicineWithCorrectTime = list.filter(
-        (medicine) => medicine.time === timeOfDay
-      );
+      medicineWithCorrectTime = list.filter((medicine) => {
+        return medicine.time === timeOfDay;
+      });
     }
   }
-  console.log(medicineWithCorrectTime, "riktig tid");
-  if (medicineWithCorrectTime.length > 0) {
-    newList = [...medicineWithCorrectTime];
-    console.log(newList, "ny liste");
-  }
+  newList = [...medicineWithCorrectTime] || [
+    {
+      viewName: "Add medicines",
+      title: `Type on the field and submit`,
+      backTo: "/medicineMenu",
+    },
+  ];
 
   return (
     <div className={viewName}>
