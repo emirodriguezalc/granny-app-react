@@ -2,103 +2,76 @@ let timeOfDay;
 const hour = new Date().getHours();
 
 if (hour < 12) {
-  timeOfDay = "morning"
+  timeOfDay = 'morning';
 }
 if (12 <= hour && hour < 14) {
-  timeOfDay = "midday"
+  timeOfDay = 'midday';
 }
 if (14 <= hour && hour < 18) {
-  timeOfDay = "afternoon"
+  timeOfDay = 'afternoon';
 }
 if (18 <= hour && hour < 24) {
-  timeOfDay = "evening"
+  timeOfDay = 'evening';
 }
 
 const medicineData = {
-  viewName: "See medicines",
+  viewName: 'See medicines',
   title: `These are your ${timeOfDay} medicines`,
-  backTo: "/medicineMenu"
+  backTo: '/medicineMenu',
 };
 
 const addMedicine = {
-  viewName: "Add medicines",
+  viewName: 'Add medicines',
   title: `Type on the field and submit`,
-  backTo: "/medicineMenu"
+  backTo: '/medicineMenu',
 };
 
 const foodData = {
-  viewName: "Food tracker",
-  title: "",
-  backTo: "/bodyMenu",
-  list: [{
-    text: "Breakfast",
-    taken: false
-  },
-  {
-    text: "Lunch",
-    taken: false
-  },
-  {
-    text: "Tea",
-    taken: false
-  },
-  {
-    text: "Dinner",
-    taken: false
-  }]
+  viewName: 'Food tracker',
+  title: '',
+  backTo: '/bodyMenu',
+  list: [
+    {
+      text: 'Breakfast',
+      taken: false,
+    },
+    {
+      text: 'Lunch',
+      taken: false,
+    },
+    {
+      text: 'Tea',
+      taken: false,
+    },
+    {
+      text: 'Dinner',
+      taken: false,
+    },
+  ],
 };
 
 const waterData = {
-  viewName: "Water tracker",
-  title: "",
-  backTo: "/bodyMenu",
-  list: [{
-    text: "Morning",
-    taken: false
-  },
-  {
-    text: "Midday",
-    taken: false
-  },
-  {
-    text: "Afternoon",
-    taken: false
-  },
-  {
-    text: "Night",
-    taken: false
-  }
-  ]
-};
-
-const food = {
-  title: 'Food tracker',
-  viewName: 'food-menu',
+  viewName: 'Water tracker',
+  title: '',
+  backTo: '/bodyMenu',
   list: [
-    { name: 'breakfast', text: 'I had breakfast' },
-    { name: 'lunch', text: 'I had lunch' },
-    { name: 'tea', text: 'I had tea' },
-    { name: 'dinner', text: 'I had dinner' },
+    {
+      text: 'Morning',
+      taken: false,
+    },
+    {
+      text: 'Midday',
+      taken: false,
+    },
+    {
+      text: 'Afternoon',
+      taken: false,
+    },
+    {
+      text: 'Night',
+      taken: false,
+    },
   ],
 };
 
-const water = {
-  title: 'Water tracker',
-  viewName: 'water-menu',
-  list: [
-    { name: 'morning', text: 'Morning' },
-    { name: 'midday', text: 'Midday' },
-    { name: 'afternoon', text: 'afternoon' },
-    { name: 'evening', text: 'Evening' },
-  ],
-};
-// mock
-const medicines = {
-  title: 'Medicine tracker',
-  viewName: 'see-medicines',
-  list: [
-    { name: 'ibux', text: 'ibux' },
-    { name: 'profen', text: 'profen' },
-  ],
-};
-export { food, water, medicines, medicineData, foodData, waterData, addMedicine };
+export { medicineData, foodData, waterData, addMedicine };

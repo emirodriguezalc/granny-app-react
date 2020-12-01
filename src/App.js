@@ -1,10 +1,15 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { React, useState } from "react";
-import Options from "./components/options";
-import Tracker from "./components/tracker";
-import { medicineData, foodData, waterData, addMedicine } from "./config/tracker";
-import AddMedicine from "./components/addMedicine";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { React, useState } from 'react';
+import Options from './components/options';
+import Tracker from './components/tracker';
+import {
+  medicineData,
+  foodData,
+  waterData,
+  addMedicine,
+} from './config/tracker';
+import AddMedicine from './components/addMedicine';
 import Meditation from './views/meditation';
 import MyScore from './views/myScore';
 import WeeklyBoard from "./views/weeklyBoard";
@@ -17,12 +22,13 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
-} from "./config/options";
+} from './config/options';
 
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
 import weeklyBoardMock from './mocks/weeklyBoardMock';
-
+import PlayMenu from './views/playMenu/PlayMenu';
+import Game from './views/tictactoe/Tictactoe';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -33,8 +39,22 @@ function App() {
         <Route exact path="/">
           <Options data={home} />
         </Route>
-        <Route path="/foodMenu"> <Tracker list={foodData.list} viewName={foodData.viewName} viewTitle={foodData.title} backTo={foodData.backTo} /></Route>
-        <Route path="/waterMenu"> <Tracker list={waterData.list} viewName={waterData.viewName} viewTitle={waterData.title} backTo={waterData.backTo} /></Route>
+        <Route path="/foodMenu">
+          <Tracker
+            list={foodData.list}
+            viewName={foodData.viewName}
+            viewTitle={foodData.title}
+            backTo={foodData.backTo}
+          />
+        </Route>
+        <Route path="/waterMenu">
+          <Tracker
+            list={waterData.list}
+            viewName={waterData.viewName}
+            viewTitle={waterData.title}
+            backTo={waterData.backTo}
+          />
+        </Route>
         <Route path="/addMedicine">
           <AddMedicine
             medicines={medicines}
@@ -46,7 +66,12 @@ function App() {
         </Route>
 
         <Route path="/seeMedicines">
-          <Tracker list={medicines} viewName={medicineData.viewName} viewTitle={medicineData.title} backTo={medicineData.backTo} />
+          <Tracker
+            list={medicines}
+            viewName={medicineData.viewName}
+            viewTitle={medicineData.title}
+            backTo={medicineData.backTo}
+          />
         </Route>
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
@@ -66,6 +91,11 @@ function App() {
         <Route path="/haveFunMenu">
           <Options data={haveFunMenu} />
         </Route>
+        <Route path="/playMenu">
+          <PlayMenu />
+        </Route>
+        <Route path="/tictactoe">
+          <Game />
         <Route path="/weeklyBoard">
           <WeeklyBoard list={weeklyBoardMock} />
         </Route>
