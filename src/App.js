@@ -14,8 +14,6 @@ import {
   photosHome,
 } from "./config/options";
 import { React, useState, useContext } from "react";
-const MedicineContext = React.createContext(medicineData);
-const context = useContext(MedicineContext);
 function App() {
   const [text, setText] = useState("");
   const [name, setName] = useState("");
@@ -60,9 +58,7 @@ function App() {
         </Route>
 
         <Route path="/seeMedicines">
-          <MedicineContext.Provider value={[medicines, setMedicines]}>
-            <Tracker />
-          </MedicineContext.Provider>
+          <Tracker view={medicines} />
         </Route>
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
@@ -90,4 +86,4 @@ function App() {
   );
 }
 
-export { App, MedicineContext };
+export default App;
