@@ -1,4 +1,3 @@
-
 let timeOfDay;
 const hour = new Date().getHours();
 
