@@ -5,6 +5,10 @@ import Options from "./components/options";
 import Tracker from "./components/tracker";
 import { medicineData, foodData, waterData, addMedicine } from "./config/tracker";
 import AddMedicine from "./components/addMedicine";
+import Meditation from './views/meditation';
+import MyScore from './views/myScore';
+import { food, water, medicines } from './config/tracker';
+
 import {
   home,
   bodyMenu,
@@ -13,7 +17,11 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
+
 } from "./config/options";
+
+import { guides } from './config/meditation';
+import scoreMock from './mocks/myscore';
 
 function App() {
   const [medicines, setMedicines] = useState({
@@ -50,6 +58,9 @@ function App() {
         <Route path="/mindMenu">
           <Options data={mindMenu} />
         </Route>
+        <Route path="/meditationMenu">
+          <Meditation view={guides} />
+        </Route>
         <Route path="/mindTrainer">
           <Options data={mindTrainer} />
         </Route>
@@ -58,6 +69,9 @@ function App() {
         </Route>
         <Route path="/photosHome">
           <Options data={photosHome} />
+        </Route>
+        <Route path="/myScore">
+          <MyScore data={scoreMock} />
         </Route>
         {/*         <Route>
           <NotFound />
