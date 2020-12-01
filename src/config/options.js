@@ -114,7 +114,7 @@ const haveFunMenu = {
     },
     {
       title: 'Show play section',
-      linkTo: '/playMenu',
+      linkTo: '/gameInvites',
       size: 'big',
     },
   ],

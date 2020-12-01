@@ -1,4 +1,4 @@
-.weekly-board-section {
+.list-page-section {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.weekly-board-list {
+.list-page-list {
   overflow-y: scroll;
   border: 2px solid black;
   width: 95vw;
