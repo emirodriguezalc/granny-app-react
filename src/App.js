@@ -12,7 +12,11 @@ import {
 import AddMedicine from './components/addMedicine';
 import Meditation from './views/meditation';
 import MyScore from './views/myScore';
+
 import WeeklyBoard from './views/weeklyBoard';
+
+import ListPage from "./components/listPage";
+
 
 import {
   home,
@@ -27,6 +31,7 @@ import {
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
 import weeklyBoardMock from './mocks/weeklyBoardMock';
+import gameInvitesMock from './mocks/gameInvitesMock';
 import PlayMenu from './views/playMenu/PlayMenu';
 import Game from './views/tictactoe/Tictactoe';
 import PhotosFeed from './views/photosFeed/PhotosFeed';
@@ -40,6 +45,7 @@ function App() {
         <Route exact path="/">
           <Options data={home} />
         </Route>
+
         <Route path="/foodMenu">
           <Tracker
             list={foodData.list}
@@ -48,6 +54,7 @@ function App() {
             backTo={foodData.backTo}
           />
         </Route>
+
         <Route path="/waterMenu">
           <Tracker
             list={waterData.list}
@@ -56,6 +63,7 @@ function App() {
             backTo={waterData.backTo}
           />
         </Route>
+
         <Route path="/addMedicine">
           <AddMedicine
             medicines={medicines}
@@ -74,39 +82,62 @@ function App() {
             backTo={medicineData.backTo}
           />
         </Route>
+
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
         </Route>
+
         <Route path="/medicineMenu">
           <Options data={medicineMenu} />
         </Route>
+
         <Route path="/mindMenu">
           <Options data={mindMenu} />
         </Route>
+
         <Route path="/meditationMenu">
           <Meditation view={guides} />
         </Route>
+
         <Route path="/mindTrainer">
           <Options data={mindTrainer} />
         </Route>
+
         <Route path="/haveFunMenu">
           <Options data={haveFunMenu} />
         </Route>
+
+        <Route path="/gameInvites">
+          <ListPage
+            list={gameInvitesMock.list}
+            backTo={gameInvitesMock.backTo}
+            title={gameInvitesMock.title}
+          />
+        </Route>
+
         <Route path="/playMenu">
           <PlayMenu />
         </Route>
+
         <Route path="/tictactoe">
           <Game />
         </Route>
         <Route path="/weeklyBoard">
-          <WeeklyBoard list={weeklyBoardMock} />
+          <ListPage
+            list={weeklyBoardMock.list}
+            backTo={weeklyBoardMock.backTo}
+            title={weeklyBoardMock.title}
+          />
         </Route>
+
         <Route path="/photosHome">
           <Options data={photosHome} />
         </Route>
+
         <Route path="/photosFeed">
           <PhotosFeed />
         </Route>
+
         <Route path="/myScore">
           <MyScore data={scoreMock} />
         </Route>
