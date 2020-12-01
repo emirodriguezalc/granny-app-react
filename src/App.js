@@ -1,12 +1,14 @@
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Options from './components/options';
-import Tracker from './components/tracker';
-
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { React, useState } from "react";
+import Options from "./components/options";
+import Tracker from "./components/tracker";
+import { medicineData, foodData, waterData, addMedicine } from "./config/tracker";
+import AddMedicine from "./components/addMedicine";
 import Meditation from './views/meditation';
-
 import MyScore from './views/myScore';
 import { food, water, medicines } from './config/tracker';
+
 import {
   home,
   bodyMenu,
@@ -15,25 +17,37 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
-} from './config/options';
+
+} from "./config/options";
+
 import { guides } from './config/meditation';
 import scoreMock from './mocks/myscore';
 
 function App() {
+  const [medicines, setMedicines] = useState({
+    list: [],
+  });
+
   return (
     <Router>
       <Switch>
         <Route exact path="/">
           <Options data={home} />
         </Route>
-        <Route path="/foodMenu">
-          <Tracker view={food} />
+        <Route path="/foodMenu"> <Tracker list={foodData.list} viewName={foodData.viewName} viewTitle={foodData.title} backTo={foodData.backTo} /></Route>
+        <Route path="/waterMenu"> <Tracker list={waterData.list} viewName={waterData.viewName} viewTitle={waterData.title} backTo={waterData.backTo} /></Route>
+        <Route path="/addMedicine">
+          <AddMedicine
+            data={medicines}
+            setMedicines={setMedicines}
+            viewName={addMedicine.viewName}
+            viewTitle={addMedicine.title}
+            backTo={addMedicine.backTo}
+          />
         </Route>
-        <Route path="/waterMenu">
-          <Tracker view={water} />
-        </Route>
+
         <Route path="/seeMedicines">
-          <Tracker view={medicines} />
+          <Tracker list={medicines} viewName={medicineData.viewName} viewTitle={medicineData.title} backTo={medicineData.backTo} />
         </Route>
         <Route path="/bodyMenu">
           <Options data={bodyMenu} />
