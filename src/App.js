@@ -2,6 +2,9 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Options from './components/options';
 import Tracker from './components/tracker';
+
+import Meditation from './views/meditation';
+
 import MyScore from './views/myScore';
 import { food, water, medicines } from './config/tracker';
 import {
@@ -13,8 +16,8 @@ import {
   haveFunMenu,
   photosHome,
 } from './config/options';
-import scoreMock from './mocks/myscore'
-
+import { guides } from './config/meditation';
+import scoreMock from './mocks/myscore';
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
         </Route>
         <Route path="/mindMenu">
           <Options data={mindMenu} />
+        </Route>
+        <Route path="/meditationMenu">
+          <Meditation view={guides} />
         </Route>
         <Route path="/mindTrainer">
           <Options data={mindTrainer} />
