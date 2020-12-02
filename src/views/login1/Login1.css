@@ -4,12 +4,13 @@
 }
 body {
   display: flex;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 .login1 {
   background-color: #9ddaff;
   width: 100vw;
+  height: 100vh;
 }
 .logo {
   display: flex;
