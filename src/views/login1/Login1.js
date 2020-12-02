@@ -30,7 +30,7 @@ const Login1 = () => {
           />
         </div>
       </div>
-      <Button linkTo="/login2" title="Tap here to do it manually" />
+      <Button linkTo="/register" title="Tap here to do it manually" />
     </div>
   );
 };
