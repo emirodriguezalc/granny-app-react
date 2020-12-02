@@ -35,8 +35,7 @@ const Register = ({ setToken, token }) => {
             if (token) {
               return redirectFunction();
             }
-          })
-          .catch((err) => console.log(err));
+          });
       }
     );
   };
