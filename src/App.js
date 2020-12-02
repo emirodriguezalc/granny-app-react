@@ -41,134 +41,210 @@ import Landing from './views/landing';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
+  const [token, setToken] = useState(null);
+  console.log(token);
+
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Options data={home} />
+          {token ?
+            <Options data={home} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/foodMenu">
-          <Tracker
-            list={foodData.list}
-            viewName={foodData.viewName}
-            viewTitle={foodData.title}
-            backTo={foodData.backTo}
-          />
+          {token ?
+            <Tracker
+              list={foodData.list}
+              viewName={foodData.viewName}
+              viewTitle={foodData.title}
+              backTo={foodData.backTo}
+            />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/waterMenu">
-          <Tracker
-            list={waterData.list}
-            viewName={waterData.viewName}
-            viewTitle={waterData.title}
-            backTo={waterData.backTo}
-          />
+          {token ?
+            <Tracker
+              list={waterData.list}
+              viewName={waterData.viewName}
+              viewTitle={waterData.title}
+              backTo={waterData.backTo}
+            />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/addMedicine">
-          <AddMedicine
-            medicines={medicines}
-            setMedicines={setMedicines}
-            viewName={addMedicine.viewName}
-            viewTitle={addMedicine.title}
-            backTo={addMedicine.backTo}
-          />
+          {token ?
+            <AddMedicine
+              medicines={medicines}
+              setMedicines={setMedicines}
+              viewName={addMedicine.viewName}
+              viewTitle={addMedicine.title}
+              backTo={addMedicine.backTo}
+            />
+            : <Login1 />
+          }
+
         </Route>
 
         <Route path="/seeMedicines">
-          <Tracker
-            list={medicines}
-            viewName={medicineData.viewName}
-            viewTitle={medicineData.title}
-            backTo={medicineData.backTo}
-          />
+          {token ?
+            <Tracker
+              list={medicines}
+              viewName={medicineData.viewName}
+              viewTitle={medicineData.title}
+              backTo={medicineData.backTo}
+            />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/bodyMenu">
-          <Options data={bodyMenu} />
+          {token ?
+            <Options data={bodyMenu} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/medicineMenu">
-          <Options data={medicineMenu} />
+          {token ?
+            <Options data={medicineMenu} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/mindMenu">
-          <Options data={mindMenu} />
+          {token ?
+            <Options data={mindMenu} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/meditationMenu">
-          <Meditation view={guides} />
+          {token ?
+            <Meditation view={guides} />
+            : <Login1 />
+          }
+
         </Route>
 
         <Route path="/mindTrainer">
-          <Options data={mindTrainer} />
+          {token ?
+            <Options data={mindTrainer} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/haveFunMenu">
-          <Options data={haveFunMenu} />
+          {token ?
+            <Options data={haveFunMenu} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/gameInvites">
-          <ListPage
-            list={gameInvitesMock.list}
-            backTo={gameInvitesMock.backTo}
-            title={gameInvitesMock.title}
-          />
+          {token ?
+            <ListPage
+              list={gameInvitesMock.list}
+              backTo={gameInvitesMock.backTo}
+              title={gameInvitesMock.title}
+            />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/gameHome">
-          <Options data={gameHome} />
+          {token ?
+            <Options data={gameHome} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/playMenu">
-          <PlayMenu />
+          {token ?
+            <PlayMenu />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/playFollow">
-          <Follow config={playFollow} />
+          {token ?
+            <Follow config={playFollow} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/tictactoe">
-          <Game />
+          {token ?
+            <Game />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/weeklyBoard">
-          <ListPage
-            list={weeklyBoardMock.list}
-            backTo={weeklyBoardMock.backTo}
-            title={weeklyBoardMock.title}
-          />
+          {token ?
+            <ListPage
+              list={weeklyBoardMock.list}
+              backTo={weeklyBoardMock.backTo}
+              title={weeklyBoardMock.title}
+            />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/photosHome">
-          <Options data={photosHome} />
+          {token ?
+            <Options data={photosHome} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/photosFollow">
-          <Follow config={photosFollow} />
+          {token ?
+            <Follow config={photosFollow} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/photosFeed">
-          <PhotosFeed />
+          {token ?
+            <PhotosFeed />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/myScore">
-          <MyScore data={scoreMock} />
+          {token ?
+            <MyScore data={scoreMock} />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/register">
-          <Register />
+          <Register setToken={setToken} token={token} />
         </Route>
+
         <Route path="/landing">
           <Landing />
         </Route>
+
         <Route path="/login3">
-          <Login3 />
+          {token ?
+            <Login3 />
+            : <Login1 />
+          }
         </Route>
 
         <Route path="/login1">
-          <Login1 />
+          {token ?
+            <Options data={home} />
+            : <Login1 />
+          }
         </Route>
         {/*         <Route>
           <NotFound />
