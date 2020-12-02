@@ -6,9 +6,9 @@ body {
   display: flex;
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-color: #9ddaff;
 }
 .login1 {
+  background-color: #9ddaff;
   width: 100vw;
 }
 .logo {
