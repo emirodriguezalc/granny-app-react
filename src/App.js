@@ -1,13 +1,13 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { React, useState } from "react";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { React, useState } from 'react';
 import {
   medicineData,
   foodData,
   waterData,
   addMedicine,
-} from "./config/tracker";
-import MyScore from "./views/myScore";
+} from './config/tracker';
+import MyScore from './views/myScore';
 import {
   home,
   bodyMenu,
@@ -24,8 +24,8 @@ import { playFollow } from './config/follow';
 import Options from './components/options';
 import Tracker from './components/tracker';
 import AddMedicine from './components/addMedicine';
-import ListPage from "./components/listPage";
-import Follow from "./components/follow";
+import ListPage from './components/listPage';
+import Follow from './components/follow';
 import scoreMock from './mocks/myscore';
 import weeklyBoardMock from './mocks/weeklyBoardMock';
 import gameInvitesMock from './mocks/gameInvitesMock';
@@ -34,6 +34,7 @@ import Game from './views/tictactoe/Tictactoe';
 import PhotosFeed from './views/photosFeed/PhotosFeed';
 import Meditation from './views/meditation';
 import Login from './views/login';
+import Login1 from './views/login1/Login1';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -155,6 +156,10 @@ function App() {
 
         <Route path="/login">
           <Login />
+        </Route>
+
+        <Route path="/login1">
+          <Login1 />
         </Route>
         {/*         <Route>
           <NotFound />
