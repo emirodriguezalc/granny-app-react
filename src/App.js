@@ -33,6 +33,7 @@ import PlayMenu from './views/playMenu/PlayMenu';
 import Game from './views/tictactoe/Tictactoe';
 import PhotosFeed from './views/photosFeed/PhotosFeed';
 import Meditation from './views/meditation';
+import Login from './views/login';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -60,6 +61,7 @@ function App() {
             backTo={waterData.backTo}
           />
         </Route>
+
         <Route path="/addMedicine">
           <AddMedicine
             medicines={medicines}
@@ -149,6 +151,10 @@ function App() {
 
         <Route path="/myScore">
           <MyScore data={scoreMock} />
+        </Route>
+
+        <Route path="/login">
+          <Login />
         </Route>
         {/*         <Route>
           <NotFound />
