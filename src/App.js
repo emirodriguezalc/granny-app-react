@@ -34,10 +34,9 @@ import PlayMenu from "./views/playMenu/PlayMenu";
 import Game from "./views/tictactoe/Tictactoe";
 import PhotosFeed from "./views/photosFeed/PhotosFeed";
 import Meditation from "./views/meditation";
-import Login from "./views/login";
+import Register from "./views/register";
 import Login3 from "./views/login3";
 import Landing from "./views/landing";
-
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -157,7 +156,7 @@ function App() {
           <MyScore data={scoreMock} />
         </Route>
 
-        <Route path="/login">
+        <Route path="/register">
           <Register />
         </Route>
         <Route path="/landing">
