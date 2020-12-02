@@ -33,7 +33,7 @@ import PlayMenu from './views/playMenu/PlayMenu';
 import Game from './views/tictactoe/Tictactoe';
 import PhotosFeed from './views/photosFeed/PhotosFeed';
 import Meditation from './views/meditation';
-import Login from './views/login';
+import Register from './views/register';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -154,7 +154,7 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login />
+          <Register />
         </Route>
         {/*         <Route>
           <NotFound />
