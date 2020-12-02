@@ -16,19 +16,23 @@ import {
   medicineMenu,
   haveFunMenu,
   photosHome,
-} from "./config/options";
-import { guides } from "./config/meditation";
-import Options from "./components/options";
-import Tracker from "./components/tracker";
-import AddMedicine from "./components/addMedicine";
+  gameHome,
+} from './config/options';
+import { guides } from './config/meditation';
+import { photosFollow } from './config/follow';
+import { playFollow } from './config/follow';
+import Options from './components/options';
+import Tracker from './components/tracker';
+import AddMedicine from './components/addMedicine';
 import ListPage from "./components/listPage";
-import scoreMock from "./mocks/myscore";
-import weeklyBoardMock from "./mocks/weeklyBoardMock";
-import gameInvitesMock from "./mocks/gameInvitesMock";
-import PlayMenu from "./views/playMenu/PlayMenu";
-import Game from "./views/tictactoe/Tictactoe";
-import PhotosFeed from "./views/photosFeed/PhotosFeed";
-import Meditation from "./views/meditation";
+import Follow from "./components/follow";
+import scoreMock from './mocks/myscore';
+import weeklyBoardMock from './mocks/weeklyBoardMock';
+import gameInvitesMock from './mocks/gameInvitesMock';
+import PlayMenu from './views/playMenu/PlayMenu';
+import Game from './views/tictactoe/Tictactoe';
+import PhotosFeed from './views/photosFeed/PhotosFeed';
+import Meditation from './views/meditation';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -107,8 +111,16 @@ function App() {
           />
         </Route>
 
+        <Route path="/gameHome">
+          <Options data={gameHome} />
+        </Route>
+
         <Route path="/playMenu">
           <PlayMenu />
+        </Route>
+
+        <Route path="/playFollow">
+          <Follow config={playFollow} />
         </Route>
 
         <Route path="/tictactoe">
@@ -125,6 +137,10 @@ function App() {
 
         <Route path="/photosHome">
           <Options data={photosHome} />
+        </Route>
+
+        <Route path="/photosFollow">
+          <Follow config={photosFollow} />
         </Route>
 
         <Route path="/photosFeed">

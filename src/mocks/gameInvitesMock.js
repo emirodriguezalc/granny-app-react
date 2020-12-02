@@ -1,6 +1,6 @@
 const weeklyBoardMock = {
   title: "Play with a friend",
-  backTo: "/haveFunMenu",
+  backTo: "/gameHome",
   list: [
     {
       name: "Carlos Chavez",
