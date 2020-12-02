@@ -15,7 +15,7 @@ const Login3 = () => {
       <h2 class="loggedin-subtitle">
         Feel free to explore the app. It is designed for you
       </h2>
-      <Button size="big" linkTo="/home" title="Tap me to begin!"></Button>
+      <Button size="big" linkTo="/" title="Tap me to begin!"></Button>
     </div>
   );
 };
