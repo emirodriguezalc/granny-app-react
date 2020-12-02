@@ -17,6 +17,7 @@
 .button-small {
   width: 90vw;
   height: 10vh;
+  inline-size: max-content;
 }
 
 .button-big {

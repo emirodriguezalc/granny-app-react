@@ -1,10 +1,10 @@
-import React from 'react';
-import './Tictactoe.css';
-import ReactTooltip from 'react-tooltip';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile, faUndo, faRedo } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import "./Tictactoe.css";
+import ReactTooltip from "react-tooltip";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFile, faUndo, faRedo } from "@fortawesome/free-solid-svg-icons";
 
-import Header from '../../components/header';
+import Header from "../../components/header";
 
 function Square(props) {
   return (
@@ -33,8 +33,8 @@ class Board extends React.Component {
       return;
     }
 
-    let x = 'X';
-    let o = 'O';
+    let x = "X";
+    let o = "O";
 
     let move = this.state.move;
     squaresHistory[move] = this.state.squares;
@@ -86,7 +86,7 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
-        extraClass={this.state.xIsNext ? 'revert' : ''}
+        extraClass={this.state.xIsNext ? "revert" : ""}
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
       />
@@ -97,9 +97,9 @@ class Board extends React.Component {
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = "Winner: " + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
     return (
       <div>
@@ -185,7 +185,7 @@ function calculateWinner(squares) {
 
 const Tictactoe = () => (
   <div>
-    <Header title="Tic tac toe" backTo="/haveFunMenu" />
+    <Header title="Tic tac toe" backTo="/playMenu" />
     <Game />
   </div>
 );

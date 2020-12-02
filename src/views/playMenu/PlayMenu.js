@@ -1,15 +1,15 @@
-import React from 'react';
-import Header from '../../components/header';
-import './PlayMenu.css';
+import React from "react";
+import Header from "../../components/header";
+import "./PlayMenu.css";
 
-import chessBoard from '../../media/chess-board.png';
-import tictactoe from '../../media/tictactoe.png';
-import { Link } from 'react-router-dom';
+import chessBoard from "../../media/chess-board.png";
+import tictactoe from "../../media/tictactoe.png";
+import { Link } from "react-router-dom";
 
 const PlayMenu = () => {
   return (
     <section className="play-menu">
-      <Header title="Play Menu" backTo="/haveFunMenu" />
+      <Header title="Play Menu" backTo="/gameInvites" />
       <section className="content-wrapper">
         <Link to="/tictactoe">
           <article className="game-card">
