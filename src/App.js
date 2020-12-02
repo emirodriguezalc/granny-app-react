@@ -26,6 +26,7 @@ import Tracker from "./components/tracker";
 import AddMedicine from "./components/addMedicine";
 import ListPage from "./components/listPage";
 import Follow from "./components/follow";
+
 import scoreMock from "./mocks/myscore";
 import weeklyBoardMock from "./mocks/weeklyBoardMock";
 import gameInvitesMock from "./mocks/gameInvitesMock";
@@ -35,6 +36,8 @@ import PhotosFeed from "./views/photosFeed/PhotosFeed";
 import Meditation from "./views/meditation";
 import Login from "./views/login";
 import Login3 from "./views/login3";
+import Landing from "./views/landing";
+
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -155,7 +158,10 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login />
+          <Register />
+        </Route>
+        <Route path="/landing">
+          <Landing />
         </Route>
         <Route path="/login3">
           <Login3 />
