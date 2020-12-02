@@ -35,6 +35,7 @@ import Game from "./views/tictactoe/Tictactoe";
 import PhotosFeed from "./views/photosFeed/PhotosFeed";
 import Meditation from "./views/meditation";
 import Login from "./views/login";
+import Login3 from "./views/login3";
 import Landing from "./views/landing";
 
 
@@ -161,6 +162,9 @@ function App() {
         </Route>
         <Route path="/landing">
           <Landing />
+        </Route>
+        <Route path="/login3">
+          <Login3 />
         </Route>
         {/*         <Route>
           <NotFound />
