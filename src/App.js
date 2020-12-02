@@ -17,23 +17,26 @@ import {
   haveFunMenu,
   photosHome,
   gameHome,
-} from './config/options';
-import { guides } from './config/meditation';
-import { photosFollow } from './config/follow';
-import { playFollow } from './config/follow';
-import Options from './components/options';
-import Tracker from './components/tracker';
-import AddMedicine from './components/addMedicine';
+} from "./config/options";
+import { guides } from "./config/meditation";
+import { photosFollow } from "./config/follow";
+import { playFollow } from "./config/follow";
+import Options from "./components/options";
+import Tracker from "./components/tracker";
+import AddMedicine from "./components/addMedicine";
 import ListPage from "./components/listPage";
 import Follow from "./components/follow";
-import scoreMock from './mocks/myscore';
-import weeklyBoardMock from './mocks/weeklyBoardMock';
-import gameInvitesMock from './mocks/gameInvitesMock';
-import PlayMenu from './views/playMenu/PlayMenu';
-import Game from './views/tictactoe/Tictactoe';
-import PhotosFeed from './views/photosFeed/PhotosFeed';
-import Meditation from './views/meditation';
-import Register from './views/register';
+
+import scoreMock from "./mocks/myscore";
+import weeklyBoardMock from "./mocks/weeklyBoardMock";
+import gameInvitesMock from "./mocks/gameInvitesMock";
+import PlayMenu from "./views/playMenu/PlayMenu";
+import Game from "./views/tictactoe/Tictactoe";
+import PhotosFeed from "./views/photosFeed/PhotosFeed";
+import Meditation from "./views/meditation";
+import Login from "./views/login";
+import Landing from "./views/landing";
+
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -155,6 +158,9 @@ function App() {
 
         <Route path="/login">
           <Register />
+        </Route>
+        <Route path="/landing">
+          <Landing />
         </Route>
         {/*         <Route>
           <NotFound />
