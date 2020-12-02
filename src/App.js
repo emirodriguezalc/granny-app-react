@@ -1,13 +1,13 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { React, useState } from "react";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { React, useState } from 'react';
 import {
   medicineData,
   foodData,
   waterData,
   addMedicine,
-} from "./config/tracker";
-import MyScore from "./views/myScore";
+} from './config/tracker';
+import MyScore from './views/myScore';
 import {
   home,
   bodyMenu,
@@ -17,26 +17,27 @@ import {
   haveFunMenu,
   photosHome,
   gameHome,
-} from "./config/options";
-import { guides } from "./config/meditation";
-import { photosFollow } from "./config/follow";
-import { playFollow } from "./config/follow";
-import Options from "./components/options";
-import Tracker from "./components/tracker";
-import AddMedicine from "./components/addMedicine";
-import ListPage from "./components/listPage";
-import Follow from "./components/follow";
+} from './config/options';
+import { guides } from './config/meditation';
+import { photosFollow } from './config/follow';
+import { playFollow } from './config/follow';
+import Options from './components/options';
+import Tracker from './components/tracker';
+import AddMedicine from './components/addMedicine';
+import ListPage from './components/listPage';
+import Follow from './components/follow';
 
-import scoreMock from "./mocks/myscore";
-import weeklyBoardMock from "./mocks/weeklyBoardMock";
-import gameInvitesMock from "./mocks/gameInvitesMock";
-import PlayMenu from "./views/playMenu/PlayMenu";
-import Game from "./views/tictactoe/Tictactoe";
-import PhotosFeed from "./views/photosFeed/PhotosFeed";
-import Meditation from "./views/meditation";
-import Register from "./views/register";
-import Login3 from "./views/login3";
-import Landing from "./views/landing";
+import scoreMock from './mocks/myscore';
+import weeklyBoardMock from './mocks/weeklyBoardMock';
+import gameInvitesMock from './mocks/gameInvitesMock';
+import PlayMenu from './views/playMenu/PlayMenu';
+import Game from './views/tictactoe/Tictactoe';
+import PhotosFeed from './views/photosFeed/PhotosFeed';
+import Meditation from './views/meditation';
+import Register from './views/register';
+import Login1 from './views/login1/Login1';
+import Login3 from './views/login3';
+import Landing from './views/landing';
 
 function App() {
   const [medicines, setMedicines] = useState([]);
@@ -164,6 +165,10 @@ function App() {
         </Route>
         <Route path="/login3">
           <Login3 />
+        </Route>
+
+        <Route path="/login1">
+          <Login1 />
         </Route>
         {/*         <Route>
           <NotFound />
